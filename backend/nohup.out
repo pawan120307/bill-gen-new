@@ -1,0 +1,2329 @@
+INFO:     Will watch for changes in these directories: ['/Users/quick/Desktop/bill_generator-main/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [56836] using StatReload
+INFO:     Started server process [56893]
+INFO:     Waiting for application startup.
+2025-08-14 09:40:10,093 - server - INFO - 🚀 InvoiceForge API started successfully!
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49491 - "GET /api/business/templates HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49514 - "OPTIONS /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+INFO:     127.0.0.1:49516 - "OPTIONS /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49516 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+DEBUG: Found 38 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49514 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 38 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49521 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49537 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49538 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49537 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49537 - "GET /api/customers HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 38 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49540 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 38 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49548 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49558 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49558 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49575 - "OPTIONS /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49575 - "POST /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49661 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49665 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49669 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49669 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "OPTIONS /api/invoices/74e901e4-e475-47f6-b176-4a363e518429/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "PATCH /api/invoices/74e901e4-e475-47f6-b176-4a363e518429/status HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:49674 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49676 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49674 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49749 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49782 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49784 - "OPTIONS /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49782 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49782 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49796 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49798 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49818 - "OPTIONS /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49818 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49818 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49818 - "OPTIONS /api/business/generate-template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49820 - "POST /api/business/generate-template HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 1 custom templates
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49820 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 1 custom templates
+DEBUG: Template: py vault Business Template
+INFO:     127.0.0.1:49818 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49820 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49837 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49838 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49837 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49840 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49855 - "POST /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49941 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49944 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49941 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49942 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49941 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49944 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49941 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49946 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49953 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49977 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "POST /api/business/generate-template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "OPTIONS /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49985 - "OPTIONS /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 2 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+INFO:     127.0.0.1:49977 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 2 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+INFO:     127.0.0.1:49985 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49985 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49987 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49999 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:49987 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50001 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50016 - "OPTIONS /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50016 - "POST /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50018 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50047 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50076 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50076 - "POST /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50076 - "POST /api/business/generate-template HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50076 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50082 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50089 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50089 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50094 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50119 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50119 - "POST /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50119 - "POST /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50302 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50304 - "OPTIONS /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50302 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50302 - "OPTIONS /api/business/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50304 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50314 - "OPTIONS /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50316 - "OPTIONS /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50314 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50316 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50318 - "OPTIONS /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50329 - "OPTIONS /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50318 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50329 - "GET /api/invoices HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50367 - "GET /api/business/templates HTTP/1.1" 200 OK
+DEBUG: Getting templates for user f42dbf46-6542-41d5-b99a-2be1f3f6234c
+DEBUG: Found 3 custom templates
+DEBUG: Template: py vault Business Template
+DEBUG: Template: PY Vault Business Template
+DEBUG: Template: Pawan Textile Business Template
+INFO:     127.0.0.1:50369 - "GET /api/business/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50377 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50379 - "OPTIONS /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50377 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50378 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50377 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50379 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50381 - "OPTIONS /api/ai/enhanced-voice-processing HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50381 - "POST /api/ai/enhanced-voice-processing HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50444 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50461 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50558 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /api/business/profile HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 322, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'ObjectId' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 327, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/routing.py", line 180, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 287, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+        value,
+    ...<4 lines>...
+        sqlalchemy_safe=sqlalchemy_safe,
+    )
+  File "/Users/quick/Desktop/bill_generator-main/backend/venv/lib/python3.13/site-packages/fastapi/encoders.py", line 330, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'ObjectId' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:     127.0.0.1:50594 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50608 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50607 - "GET /api/invoices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50608 - "GET /api/customers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50607 - "GET /api/invoices HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2025-08-14 10:44:10,588 - server - INFO - 🔒 InvoiceForge API shut down successfully!
+INFO:     Application shutdown complete.
+INFO:     Finished server process [56893]
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x000000020cb120c0 (most recent call first):
+  <no Python frame>
+WARNING:  StatReload detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x000000020cb120c0 (most recent call first):
+  <no Python frame>
+WARNING:  StatReload detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x000000020cb120c0 (most recent call first):
+  <no Python frame>
